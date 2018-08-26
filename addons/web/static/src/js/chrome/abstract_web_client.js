@@ -93,7 +93,7 @@ var AbstractWebClient = Widget.extend(mixins.ServiceProvider, {
         this._current_state = null;
         this.menu_dm = new concurrency.DropMisordered();
         this.action_mutex = new concurrency.Mutex();
-        this.set('title_part', {"zopenerp": "NdataMS"});
+        this.set('title_part', {"zopenerp": "Odoo"});
     },
     start: function () {
         var self = this;
@@ -183,7 +183,7 @@ var AbstractWebClient = Widget.extend(mixins.ServiceProvider, {
                     delete window.onOriginError;
                 } else {
                     crash_manager.show_error({
-                        type: _t("NdataMS Client Error"),
+                        type: _t("Odoo Client Error"),
                         message: _t("Unknown CORS error"),
                         data: {debug: _t("An unknown CORS error occured. The error probably originates from a JavaScript file served from a different origin.")},
                     });
@@ -191,7 +191,7 @@ var AbstractWebClient = Widget.extend(mixins.ServiceProvider, {
             } else {
                 var traceback = error ? error.stack : '';
                 crash_manager.show_error({
-                    type: _t("NdataMS Client Error"),
+                    type: _t("Odoo Client Error"),
                     message: message,
                     data: {debug: file + ':' + line + "\n" + _t('Traceback:') + "\n" + traceback},
                 });
